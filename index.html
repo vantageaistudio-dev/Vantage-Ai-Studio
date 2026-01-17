@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vantage AI Studio</title>
   <link rel="stylesheet" href="css/style.css"/>
@@ -20,52 +20,66 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Scaling Brands with AI & Design</h1>
-  <p>Premium digital experiences powered by intelligence.</p>
+  <p>We craft intelligent, high-impact digital experiences.</p>
   <a href="contact.html" class="btn">Book Consultation</a>
 </section>
 
+<!-- VISUAL METRICS -->
 <section class="card">
-  <h2>About Us</h2>
-  <p>
-    Vantage AI Studio is a next-generation digital agency delivering
-    AI-powered websites, automation, and growth strategies for modern brands.
-  </p>
+  <h2>Growth Intelligence</h2>
+
+  <!-- BAR CHART -->
+  <div class="chart">
+    <div class="bar"><span></span></div>
+    <div class="bar"><span></span></div>
+    <div class="bar"><span></span></div>
+    <div class="bar"><span></span></div>
+  </div>
+
+  <!-- LINE GRAPH -->
+  <svg class="line-graph" viewBox="0 0 300 100">
+    <polyline
+      fill="none"
+      stroke="#00ff9d"
+      stroke-width="3"
+      points="0,80 50,60 100,65 150,30 200,35 250,15 300,25"/>
+  </svg>
 </section>
 
-<section class="card">
-  <h2>Growth Metrics</h2>
-  <div class="bar">
-    <span>Website Performance</span>
-    <div class="progress p1"></div>
+<!-- DONUT STATS -->
+<section class="card stats">
+  <div class="ring">
+    <span>AI Automation</span>
   </div>
-  <div class="bar">
-    <span>Lead Conversion</span>
-    <div class="progress p2"></div>
+  <div class="ring">
+    <span>Web Growth</span>
   </div>
-  <div class="bar">
-    <span>Client Satisfaction</span>
-    <div class="progress p3"></div>
+  <div class="ring">
+    <span>Conversion</span>
   </div>
 </section>
 
+<!-- TESTIMONIAL -->
 <section class="card">
-  <h2>Testimonials</h2>
+  <h2>Client Voices</h2>
   <div class="testimonial" id="testimonial">
     “Best AI agency we’ve worked with.”
   </div>
 </section>
 
+<!-- BOOKING -->
 <section class="card">
   <h2>Book a Free Strategy Call</h2>
   <form onsubmit="sendBooking(); return false;">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="mobile" placeholder="Mobile Number" required>
-    <input type="email" id="email" placeholder="Email Address" required>
-    <input type="date" id="date" required>
+    <input id="name" placeholder="Your Name" required>
+    <input id="mobile" placeholder="Mobile Number" required>
+    <input id="email" type="email" placeholder="Email" required>
+    <input id="date" type="date" required>
     <textarea id="project" placeholder="Project Details"></textarea>
-    <button type="submit" class="btn">Book via WhatsApp</button>
+    <button class="btn">Book via WhatsApp</button>
   </form>
 </section>
 
