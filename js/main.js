@@ -1,4 +1,4 @@
-/* Scroll Animation */
+/* SCROLL ANIMATION */
 const animated = document.querySelectorAll("[data-animate]");
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -9,26 +9,23 @@ const observer = new IntersectionObserver(entries => {
 });
 animated.forEach(el => observer.observe(el));
 
-/* Animated Charts */
-const bars = document.querySelectorAll(".fill");
-bars.forEach(bar => {
-  const width = bar.getAttribute("data-width");
+/* ANIMATED CHARTS */
+document.querySelectorAll(".fill").forEach(bar => {
   setTimeout(() => {
-    bar.style.width = width;
-  }, 500);
+    bar.style.width = bar.dataset.width;
+  }, 600);
 });
 
-/* Testimonials Slider */
+/* TESTIMONIAL SLIDER */
 const testimonials = document.querySelectorAll(".testimonial");
-let tIndex = 0;
-
+let t = 0;
 setInterval(() => {
-  testimonials[tIndex].classList.remove("active");
-  tIndex = (tIndex + 1) % testimonials.length;
-  testimonials[tIndex].classList.add("active");
+  testimonials[t].classList.remove("active");
+  t = (t + 1) % testimonials.length;
+  testimonials[t].classList.add("active");
 }, 4000);
 
-/* WhatsApp Booking Form */
+/* WHATSAPP BOOKING */
 document.getElementById("bookingForm").addEventListener("submit", e => {
   e.preventDefault();
 
@@ -41,10 +38,46 @@ Date: ${date.value}
 
 Project:
 ${project.value}
-  `;
+`;
 
   window.open(
     `https://wa.me/917017690513?text=${encodeURIComponent(msg)}`,
     "_blank"
   );
 });
+
+/* 🖱️ MOUSE INTERACTIVE GLOW */
+const glow = document.getElementById("mouseGlow");
+window.addEventListener("mousemove", e => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+
+/* 🧠 AI WAVEFORM */
+const canvas = document.getElementById("aiWave");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let tWave = 0;
+function drawWave() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.beginPath();
+  ctx.strokeStyle = "rgba(0,255,255,0.6)";
+  ctx.lineWidth = 2;
+
+  for (let x = 0; x < canvas.width; x += 20) {
+    const y = canvas.height / 2 + Math.sin(x * 0.01 + tWave) * 60;
+    ctx.lineTo(x, y);
+  }
+
+  ctx.stroke();
+  tWave += 0.03;
+  requestAnimationFrame(drawWave);
+}
+drawWave();
