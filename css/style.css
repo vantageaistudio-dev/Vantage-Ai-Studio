@@ -2,34 +2,95 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  background: radial-gradient(circle at top, #0f2027, #000);
+  background: #05070f;
   color: white;
 }
 
-/* NAVBAR */
+/* 🌌 BACKGROUND */
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, #020024, #090979, #00d4ff);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+  z-index: -5;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-orbs span {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,255,255,0.4), transparent 70%);
+  filter: blur(60px);
+  animation: float 20s infinite alternate ease-in-out;
+  z-index: -4;
+}
+
+.bg-orbs span:nth-child(1) { top: 10%; left: 10%; }
+.bg-orbs span:nth-child(2) { top: 50%; left: 60%; width: 400px; height: 400px; }
+.bg-orbs span:nth-child(3) { bottom: 10%; right: 10%; }
+
+@keyframes float {
+  from { transform: translate(0,0); }
+  to { transform: translate(120px,-100px); }
+}
+
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* 🖱️ MOUSE GLOW */
+#mouseGlow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,255,255,0.25), transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+/* 🧠 AI WAVE */
+#aiWave {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+/* LAYOUT */
 .navbar {
   padding: 20px;
   text-align: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
 }
 
-/* HERO */
-.hero {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* SECTIONS */
 section {
-  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 60px 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.35);
   text-align: center;
 }
 
@@ -44,11 +105,10 @@ section {
   background: #222;
   border-radius: 20px;
   overflow: hidden;
-  margin-top: 5px;
 }
 
 .fill {
-  height: 20px;
+  height: 18px;
   width: 0;
   background: linear-gradient(135deg, #00f260, #0575e6);
   transition: width 2s ease;
@@ -57,8 +117,6 @@ section {
 /* TESTIMONIALS */
 .testimonial {
   display: none;
-  max-width: 600px;
-  margin: auto;
   font-size: 18px;
 }
 
@@ -72,13 +130,13 @@ section {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .booking input,
 .booking textarea {
-  padding: 12px;
-  border-radius: 8px;
+  padding: 14px;
+  border-radius: 10px;
   border: none;
 }
 
@@ -92,11 +150,11 @@ section {
   cursor: pointer;
 }
 
-/* ANIMATIONS */
+/* SCROLL ANIMATION */
 [data-animate] {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 1s ease;
+  transition: 1s ease;
 }
 
 [data-animate].animate {
