@@ -1,28 +1,20 @@
-/* SCROLL ANIMATION */
-const animated = document.querySelectorAll("[data-animate]");
+/* SCROLL ANIMATIONS */
+const elements = document.querySelectorAll("[data-animate]");
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate");
-    }
+    if (entry.isIntersecting) entry.target.classList.add("show");
   });
-});
-animated.forEach(el => observer.observe(el));
+}, { threshold: 0.2 });
 
-/* ANIMATED CHARTS */
-document.querySelectorAll(".fill").forEach(bar => {
-  setTimeout(() => {
-    bar.style.width = bar.dataset.width;
-  }, 600);
-});
+elements.forEach(el => observer.observe(el));
 
 /* TESTIMONIAL SLIDER */
 const testimonials = document.querySelectorAll(".testimonial");
-let t = 0;
+let i = 0;
 setInterval(() => {
-  testimonials[t].classList.remove("active");
-  t = (t + 1) % testimonials.length;
-  testimonials[t].classList.add("active");
+  testimonials[i].classList.remove("active");
+  i = (i + 1) % testimonials.length;
+  testimonials[i].classList.add("active");
 }, 4000);
 
 /* WHATSAPP BOOKING */
@@ -35,9 +27,7 @@ Name: ${name.value}
 Phone: ${phone.value}
 Email: ${email.value}
 Date: ${date.value}
-
-Project:
-${project.value}
+Project: ${project.value}
 `;
 
   window.open(
@@ -46,15 +36,8 @@ ${project.value}
   );
 });
 
-/* 🖱️ MOUSE INTERACTIVE GLOW */
-const glow = document.getElementById("mouseGlow");
-window.addEventListener("mousemove", e => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
-
-/* 🧠 AI WAVEFORM */
-const canvas = document.getElementById("aiWave");
+/* AI WAVEFORM */
+const canvas = document.getElementById("waveCanvas");
 const ctx = canvas.getContext("2d");
 
 function resize() {
@@ -62,22 +45,19 @@ function resize() {
   canvas.height = innerHeight;
 }
 resize();
-window.addEventListener("resize", resize);
+window.onresize = resize;
 
-let tWave = 0;
-function drawWave() {
+let t = 0;
+function wave() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.strokeStyle = "rgba(0,200,255,0.25)";
   ctx.beginPath();
-  ctx.strokeStyle = "rgba(0,255,255,0.6)";
-  ctx.lineWidth = 2;
-
-  for (let x = 0; x < canvas.width; x += 20) {
-    const y = canvas.height / 2 + Math.sin(x * 0.01 + tWave) * 60;
-    ctx.lineTo(x, y);
+  for (let x = 0; x < canvas.width; x++) {
+    const y = canvas.height/2 + Math.sin(x*0.01 + t) * 40;
+    ctx.lineTo(x,y);
   }
-
   ctx.stroke();
-  tWave += 0.03;
-  requestAnimationFrame(drawWave);
+  t += 0.02;
+  requestAnimationFrame(wave);
 }
-drawWave();
+wave();
