@@ -4,20 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vantage AI Studio</title>
+
 <link rel="stylesheet" href="css/style.css">
+
+<!-- THREE.JS CDN -->
+<script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
 </head>
+
 <body>
 
+<!-- BACKGROUND -->
+<div class="bg"></div>
 <div class="noise"></div>
-<div class="gradient-bg"></div>
 
 <header class="nav">
   <div class="brand">Vantage AI Studio</div>
   <nav>
     <a href="#">Services</a>
-    <a href="#">Case Studies</a>
+    <a href="#">Work</a>
     <a href="#">Contact</a>
-    <a class="cta" href="#book">Work with Us</a>
+    <a class="cta" href="#book">Work With Us</a>
   </nav>
 </header>
 
@@ -29,13 +35,13 @@
     </h1>
 
     <p>
-      We help brands automate workflows, optimize operations,
-      and scale faster using AI-driven digital systems.
+      We design intelligent systems that automate,
+      optimize, and scale digital businesses using AI.
     </p>
 
-    <div class="hero-actions">
-      <a href="#book" class="primary-btn">Get a Free AI Strategy Session</a>
-    </div>
+    <a href="#book" class="primary-btn">
+      Get a Free AI Strategy Session
+    </a>
 
     <blockquote>
       “We saved hundreds of hours and doubled productivity.”<br>
@@ -43,15 +49,14 @@
     </blockquote>
   </div>
 
-  <!-- 3D STYLE RING -->
-  <div class="ring-wrapper">
-    <div class="ring"></div>
+  <!-- REAL 3D RING -->
+  <div class="canvas-wrap">
+    <canvas id="ringCanvas"></canvas>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
-  <h2>What We Do</h2>
+  <h2>Our Services</h2>
 
   <div class="service-grid">
     <div class="service-card">🤖 AI Automation</div>
@@ -61,9 +66,8 @@
   </div>
 </section>
 
-<!-- BOOKING -->
 <section id="book" class="booking">
-  <h2>Book Your Free Strategy Call</h2>
+  <h2>Book a Free Strategy Call</h2>
 
   <form onsubmit="sendBooking(); return false;">
     <input id="name" placeholder="Your Name" required>
@@ -75,10 +79,4 @@
 </section>
 
 <footer>
-  <p>📞 7017690513 | 63753 76390</p>
-  <p>📧 vantageaistudio@gmail.com</p>
-</footer>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+  <p>📞 7017690513 | 63753 76390</p
