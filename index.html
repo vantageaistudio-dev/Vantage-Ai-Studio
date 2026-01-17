@@ -2,93 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vantage AI Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-
 <body>
 
-<!-- BACKGROUND -->
-<div class="bg-gradient"></div>
-<div class="bg-noise"></div>
-<canvas id="waveCanvas"></canvas>
+<div class="bg"></div>
 
-<!-- HEADER -->
-<header data-animate>
-  <img src="assets/logo.png" class="logo" alt="Vantage AI Studio">
-  <h1>Vantage AI Studio</h1>
+<header class="navbar">
+  <div class="logo">Vantage AI Studio</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<!-- HERO -->
-<section data-animate>
-  <h2>Scaling Brands with AI & Design</h2>
+<section class="hero">
+  <h1>Scaling Brands with AI & Design</h1>
   <p>Premium digital experiences powered by intelligence.</p>
+  <a href="contact.html" class="btn">Book Consultation</a>
 </section>
 
-<!-- ABOUT -->
-<section data-animate>
+<section class="card">
   <h2>About Us</h2>
   <p>
-    Vantage AI Studio is a next-generation AI-powered digital agency
-    helping startups and businesses scale with intelligent websites,
-    automation, and growth-driven marketing strategies.
+    Vantage AI Studio is a next-generation digital agency delivering
+    AI-powered websites, automation, and growth strategies for modern brands.
   </p>
 </section>
 
-<!-- GROWTH -->
-<section data-animate>
+<section class="card">
   <h2>Growth Metrics</h2>
-
   <div class="bar">
     <span>Website Performance</span>
-    <div class="progress"><div class="fill w90"></div></div>
+    <div class="progress p1"></div>
   </div>
-
   <div class="bar">
     <span>Lead Conversion</span>
-    <div class="progress"><div class="fill w80"></div></div>
+    <div class="progress p2"></div>
   </div>
-
   <div class="bar">
     <span>Client Satisfaction</span>
-    <div class="progress"><div class="fill w95"></div></div>
+    <div class="progress p3"></div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section data-animate>
+<section class="card">
   <h2>Testimonials</h2>
-  <p class="testimonial active">“Best AI agency we’ve worked with.” — SaaS Founder</p>
-  <p class="testimonial">“Our growth doubled in 2 months.” — Startup CEO</p>
-  <p class="testimonial">“Highly professional & futuristic.” — Marketing Lead</p>
+  <div class="testimonial" id="testimonial">
+    “Best AI agency we’ve worked with.”
+  </div>
 </section>
 
-<!-- BOOKING -->
-<section data-animate>
+<section class="card">
   <h2>Book a Free Strategy Call</h2>
-
-  <form id="bookingForm">
-    <input id="name" placeholder="Your Name" required>
-    <input id="phone" placeholder="Mobile Number" required>
-    <input id="email" type="email" placeholder="Email Address" required>
-    <input id="date" type="date" required>
-    <textarea id="project" placeholder="Project Details" required></textarea>
-    <button type="submit">📲 Book via WhatsApp</button>
+  <form onsubmit="sendBooking(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="date" id="date" required>
+    <textarea id="project" placeholder="Project Details"></textarea>
+    <button type="submit" class="btn">Book via WhatsApp</button>
   </form>
 </section>
 
-<!-- CONTACT -->
-<section data-animate>
-  <h2>Contact Details</h2>
-  <p>📧 vantageaistudio@gmail.com</p>
-  <p>📱 7017690513</p>
-  <p>📱 63753 76390</p>
-</section>
-
 <footer>
-  © 2026 Vantage AI Studio. All rights reserved.
+  <p>📞 7017690513 | 63753 76390</p>
+  <p>📧 vantageaistudio@gmail.com</p>
 </footer>
 
 <script src="js/main.js"></script>
