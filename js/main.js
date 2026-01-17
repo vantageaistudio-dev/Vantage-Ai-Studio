@@ -1,56 +1,42 @@
-// SCROLL ANIMATION
-const els = document.querySelectorAll("[data-animate]");
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add("show");
-  });
-},{threshold:0.2});
-els.forEach(el=>obs.observe(el));
+function sendBooking() {
+  const name = document.getElementById("name").value;
+  const mobile = document.getElementById("mobile").value;
+  const email = document.getElementById("email").value;
+  const date = document.getElementById("date")?.value || "";
+  const project = document.getElementById("project").value;
 
-// TESTIMONIAL SLIDER
-let t = 0;
-const testi = document.querySelectorAll(".testimonial");
-setInterval(()=>{
-  testi[t].classList.remove("active");
-  t = (t+1)%testi.length;
-  testi[t].classList.add("active");
-},4000);
+  const message =
+`New Booking - Vantage AI Studio
 
-// WHATSAPP BOOKING
-bookingForm.addEventListener("submit",e=>{
-  e.preventDefault();
-  const msg =
-`New Booking 🚀
-Name: ${name.value}
-Phone: ${phone.value}
-Email: ${email.value}
-Date: ${date.value}
-Project: ${project.value}`;
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Date: ${date}
+Project: ${project}`;
+
+  // WhatsApp
   window.open(
-    `https://wa.me/917017690513?text=${encodeURIComponent(msg)}`,
+    `https://wa.me/917017690513?text=${encodeURIComponent(message)}`,
     "_blank"
   );
-});
 
-// AI WAVE
-const c = waveCanvas;
-const ctx = c.getContext("2d");
-function resize(){
-  c.width=innerWidth;
-  c.height=innerHeight;
+  // Gmail draft
+  window.location.href =
+    `mailto:vantageaistudio@gmail.com?subject=New Booking&body=${encodeURIComponent(message)}`;
 }
-resize(); onresize=resize;
 
-let x=0;
-function wave(){
-  ctx.clearRect(0,0,c.width,c.height);
-  ctx.strokeStyle="rgba(0,200,255,0.3)";
-  ctx.beginPath();
-  for(let i=0;i<c.width;i++){
-    ctx.lineTo(i,c.height/2+Math.sin(i*0.01+x)*30);
+// Testimonials auto change
+const testimonials = [
+  "Best AI agency we’ve worked with.",
+  "Professional, fast, and innovative.",
+  "Our growth improved dramatically."
+];
+
+let i = 0;
+setInterval(() => {
+  const t = document.getElementById("testimonial");
+  if (t) {
+    t.textContent = testimonials[i % testimonials.length];
+    i++;
   }
-  ctx.stroke();
-  x+=0.02;
-  requestAnimationFrame(wave);
-}
-wave();
+}, 3000);
