@@ -2,84 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vantage AI Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<!-- 🌌 BACKGROUND LAYERS -->
+<!-- 🔮 BACKGROUND LAYERS -->
 <div class="bg-gradient"></div>
 <div class="bg-noise"></div>
+<canvas id="waveCanvas"></canvas>
+<div class="mouse-glow"></div>
 
-<div class="bg-orbs">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<!-- 🧠 AI WAVEFORM -->
-<canvas id="aiWave"></canvas>
-
-<!-- 🖱️ MOUSE GLOW -->
-<div id="mouseGlow"></div>
-
-<header class="navbar">
-  <h2>Vantage AI Studio</h2>
+<!-- 🔹 HEADER -->
+<header>
+  <img src="assets/logo.png" alt="Vantage AI Studio Logo" class="logo" />
+  <h1>Vantage AI Studio</h1>
 </header>
 
-<section class="hero" data-animate>
-  <h1>Scaling Brands with AI & Design</h1>
+<!-- 🔹 HERO -->
+<section data-animate>
+  <h2>Scaling Brands with AI & Design</h2>
   <p>Premium digital experiences powered by intelligence.</p>
 </section>
 
-<section class="about" data-animate>
+<!-- 🔹 ABOUT -->
+<section data-animate>
   <h2>About Us</h2>
   <p>
-    Vantage AI Studio is a next-generation digital agency delivering
-    AI-powered websites, automation, and growth strategies.
+    Vantage AI Studio is a next-generation digital agency helping startups
+    and businesses grow using AI-powered websites, automation,
+    and data-driven marketing strategies.
   </p>
 </section>
 
-<section class="charts" data-animate>
+<!-- 🔹 GROWTH METRICS -->
+<section data-animate>
   <h2>Growth Metrics</h2>
 
-  <div class="chart">
+  <div class="bar">
     <span>Website Performance</span>
-    <div class="bar"><div class="fill" data-width="90%"></div></div>
+    <div class="progress"><div class="fill" style="width:90%"></div></div>
   </div>
 
-  <div class="chart">
+  <div class="bar">
     <span>Lead Conversion</span>
-    <div class="bar"><div class="fill" data-width="75%"></div></div>
+    <div class="progress"><div class="fill" style="width:82%"></div></div>
   </div>
 
-  <div class="chart">
+  <div class="bar">
     <span>Client Satisfaction</span>
-    <div class="bar"><div class="fill" data-width="95%"></div></div>
+    <div class="progress"><div class="fill" style="width:95%"></div></div>
   </div>
 </section>
 
-<section class="testimonials" data-animate>
+<!-- 🔹 TESTIMONIALS -->
+<section data-animate>
   <h2>Testimonials</h2>
 
   <div class="testimonial active">
-    “Vantage AI Studio doubled our leads.”
-    <strong>— Startup Founder</strong>
+    “Best AI agency we’ve worked with.” — SaaS Founder
   </div>
 
   <div class="testimonial">
-    “Premium design with real growth.”
-    <strong>— Marketing Head</strong>
+    “Our conversions doubled in 60 days.” — Marketing Head
   </div>
 
   <div class="testimonial">
-    “Best AI agency we’ve worked with.”
-    <strong>— SaaS Company</strong>
+    “Clean design + real growth results.” — Startup CEO
   </div>
 </section>
 
-<section class="booking" data-animate>
+<!-- 🔹 BOOKING -->
+<section data-animate>
   <h2>Book a Free Strategy Call</h2>
 
   <form id="bookingForm">
@@ -92,6 +89,19 @@
     <button type="submit">📲 Book via WhatsApp</button>
   </form>
 </section>
+
+<!-- 🔹 CONTACT -->
+<section data-animate>
+  <h2>Contact Details</h2>
+
+  <p>📧 <a href="mailto:vantageaistudio@gmail.com">vantageaistudio@gmail.com</a></p>
+  <p>📱 <a href="tel:+917017690513">+91 70176 90513</a></p>
+  <p>📱 <a href="tel:+916375376390">+91 63753 76390</a></p>
+</section>
+
+<footer>
+  © 2026 Vantage AI Studio. All rights reserved.
+</footer>
 
 <script src="js/main.js"></script>
 </body>
