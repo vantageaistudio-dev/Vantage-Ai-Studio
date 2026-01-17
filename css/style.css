@@ -1,103 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+background:
+radial-gradient(circle at 20% 20%, #00eaff33, transparent 40%),
+radial-gradient(circle at 80% 80%, #8f00ff33, transparent 40%),
+linear-gradient(120deg,#020024,#090979,#000);
+background-attachment:fixed;
+color:#fff;
 }
 
-body {
-  background: radial-gradient(circle at top, #0f2027, #000);
-  color: #fff;
+.navbar{
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 40px;background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px)
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+.logo{height:45px}
+.navbar a{color:#fff;margin-left:20px;text-decoration:none}
+
+.hero{text-align:center;padding:140px 20px}
+.hero h1{font-size:3rem}
+
+.parallax{
+height:70vh;
+background:url("https://images.unsplash.com/photo-1526378722484-bd91ca387e72") center/cover fixed;
+display:flex;align-items:center;justify-content:center;
 }
 
-.logo {
-  height: 45px;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;padding:80px 40px
 }
 
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
+.card{
+background:rgba(255,255,255,.08);
+padding:30px;border-radius:16px;
+transition:.5s
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-}
+.card:hover{transform:translateY(-10px)}
 
-.hero h1 {
-  font-size: 3rem;
+.stats{max-width:800px;margin:auto;padding:80px 20px}
+.bar{margin:20px 0}
+.progress{
+height:12px;
+background:linear-gradient(90deg,#00eaff,#8f00ff);
+border-radius:10px;
+width:0;
+animation:load 2s forwards
 }
+@keyframes load{to{width:var(--value)}}
 
-.hero p {
-  margin-top: 15px;
-  opacity: 0.8;
-}
+.testimonials{text-align:center;padding:80px 20px}
+.testimonial{display:none;font-size:1.2rem}
+.testimonial.active{display:block}
 
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: #00eaff;
-  color: #000;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-}
+.page,.contact{text-align:center;padding:80px 20px}
 
-/* Pages */
-.page, .contact {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
+.reveal{
+opacity:0;
+transform:translateY(80px) scale(.95);
+transition:1s cubic-bezier(.19,1,.22,1)
 }
+.reveal.show{opacity:1;transform:none}
 
-/* Services */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.card {
-  background: rgba(255,255,255,0.07);
-  padding: 30px;
-  border-radius: 16px;
-  transition: 0.4s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-/* Animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.9s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-a {
-  color: #00eaff;
-}
+a{color:#00eaff}
