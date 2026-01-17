@@ -34,8 +34,8 @@ body {
 
 /* Hero */
 .hero {
-  padding: 120px 20px;
   text-align: center;
+  padding: 120px 20px;
 }
 
 .hero h1 {
@@ -58,26 +58,39 @@ body {
   font-weight: 600;
 }
 
+/* Pages */
+.page, .contact {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
 /* Services */
 .services {
-  padding: 80px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 40px;
 }
 
 .card {
   background: rgba(255,255,255,0.07);
   padding: 30px;
   border-radius: 16px;
-  text-align: center;
+  transition: 0.4s ease;
 }
 
-/* Scroll Animation */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Animations */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
+  transform: translateY(50px);
+  transition: 0.9s ease;
 }
 
 .reveal.show {
@@ -85,15 +98,6 @@ body {
   transform: translateY(0);
 }
 
-/* WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: #fff;
-  font-size: 24px;
-  padding: 14px 16px;
-  border-radius: 50%;
-  text-decoration: none;
+a {
+  color: #00eaff;
 }
