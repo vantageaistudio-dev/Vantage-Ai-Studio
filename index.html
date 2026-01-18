@@ -4,79 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vantage AI Studio</title>
-
 <link rel="stylesheet" href="css/style.css">
-
-<!-- THREE.JS CDN -->
-<script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
-<div class="bg"></div>
-<div class="noise"></div>
-
 <header class="nav">
-  <div class="brand">Vantage AI Studio</div>
+  <div class="logo">Vantage AI Studio</div>
   <nav>
-    <a href="#">Services</a>
-    <a href="#">Work</a>
-    <a href="#">Contact</a>
-    <a class="cta" href="#book">Work With Us</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+    <a class="cta">Work With Us</a>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-text">
-    <h1>
-      Turning Business into<br>
-      <span>AI-Powered Machine.</span>
-    </h1>
-
-    <p>
-      We design intelligent systems that automate,
-      optimize, and scale digital businesses using AI.
-    </p>
-
-    <a href="#book" class="primary-btn">
-      Get a Free AI Strategy Session
-    </a>
-
-    <blockquote>
-      “We saved hundreds of hours and doubled productivity.”<br>
-      <span>— Startup Founder</span>
-    </blockquote>
-  </div>
-
-  <!-- REAL 3D RING -->
-  <div class="canvas-wrap">
-    <canvas id="ringCanvas"></canvas>
+    <h1>Turning Business into <span>AI-Powered</span> Machine.</h1>
+    <p>We design intelligent systems that automate, optimize, and scale digital businesses using AI.</p>
+    <button onclick="scrollToBooking()">Get a Free AI Strategy Session</button>
+    <p class="quote">“We saved hundreds of hours and doubled productivity.”</p>
   </div>
 </section>
 
-<section class="services">
+<section class="charts">
+  <h2>AI Growth Signals</h2>
+  <div class="bars">
+    <div><span>Website Performance</span><div class="bar b1"></div></div>
+    <div><span>Lead Conversion</span><div class="bar b2"></div></div>
+    <div><span>Automation Efficiency</span><div class="bar b3"></div></div>
+  </div>
+</section>
+
+<section id="services" class="services">
   <h2>Our Services</h2>
-
   <div class="service-grid">
-    <div class="service-card">🤖 AI Automation</div>
-    <div class="service-card">🌐 High-Performance Websites</div>
-    <div class="service-card">🎯 Conversion-Focused UX</div>
-    <div class="service-card">📊 Growth Systems</div>
+    <div class="card">AI Websites<br><small>High-performance intelligent sites</small></div>
+    <div class="card">AI Automation<br><small>Save time & reduce cost</small></div>
+    <div class="card">Digital Growth<br><small>SEO, Ads & Funnels</small></div>
+    <div class="card">Custom AI Tools<br><small>Tailored solutions</small></div>
   </div>
 </section>
 
-<section id="book" class="booking">
+<section class="testimonials">
+  <h2>Testimonials</h2>
+  <p id="testimonial">“Best AI agency we’ve worked with.”</p>
+</section>
+
+<section id="booking" class="booking">
   <h2>Book a Free Strategy Call</h2>
 
-  <form onsubmit="sendBooking(); return false;">
+  <form onsubmit="sendBooking(event)">
     <input id="name" placeholder="Your Name" required>
-    <input id="mobile" placeholder="Mobile Number" required>
-    <input id="email" type="email" placeholder="Email Address" required>
+    <input id="phone" placeholder="Mobile Number" required>
+    <input id="email" placeholder="Email Address" required>
     <textarea id="project" placeholder="Project Details"></textarea>
-    <button>Book via WhatsApp</button>
+    <button type="submit">Book via WhatsApp</button>
   </form>
 </section>
 
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>📞 7017690513 | 63753 76390</p>
+  <p>📧 vantageaistudio@gmail.com</p>
+</section>
+
 <footer>
-  <p>📞 7017690513 | 63753 76390</p
+  © 2026 Vantage AI Studio
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
